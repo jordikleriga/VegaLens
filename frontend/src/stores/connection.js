@@ -32,7 +32,7 @@ export const useConnectionStore = defineStore('connection', () => {
   // Get display name for connection
   const displayName = computed(() => {
     if (connectionType.value === 'default') {
-      return 'Default (Server Config)'
+      return 'Development (Server Config)'
     }
     if (connectionName.value) {
       return connectionName.value

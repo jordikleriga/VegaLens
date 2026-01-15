@@ -21,9 +21,9 @@ import {
 const connectionStore = useConnectionStore()
 
 const connectionTypes = [
-  { 
-    id: 'default', 
-    name: 'Default', 
+  {
+    id: 'default',
+    name: 'Development',
     icon: Server,
     description: 'Use server-configured connection'
   },

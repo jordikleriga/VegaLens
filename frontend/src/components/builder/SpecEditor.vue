@@ -23,10 +23,35 @@ const specMode = ref('kibana') // 'preview' or 'kibana'
 const kibanaSpec = ref(null)
 const loadingKibana = ref(false)
 
+/**
+ * Format Kibana spec as HJSON with helpful comments
+ * HJSON is JSON with comments, which Kibana's Vega editor supports
+ */
+function formatKibanaSpecWithComments(spec) {
+  if (!spec) return ''
+
+  // Convert to JSON string first
+  let json = JSON.stringify(spec, null, 2)
+
+  // Add comments for Kibana-specific fields
+  // These comments help users understand the special Kibana placeholders
+  json = json.replace(
+    /("data"\s*:\s*\{[\s\S]*?"url"\s*:\s*\{[\s\S]*?)("%context%"\s*:\s*true)/,
+    '$1// Apply dashboard context filters (time range, filters) to this visualization\n      $2'
+  )
+
+  json = json.replace(
+    /("%timefield%"\s*:\s*"[^"]*")/,
+    '// Filter using the time picker (upper right corner). Change this to match your timestamp field or comment out if no timefield needed.\n      $1'
+  )
+
+  return json
+}
+
 const formattedSpec = computed(() => {
   if (specMode.value === 'kibana' && kibanaSpec.value) {
-    // Kibana spec is a Vega-Lite object with url data source - format as JSON
-    return JSON.stringify(kibanaSpec.value, null, 2)
+    // Kibana spec formatted as HJSON with helpful comments
+    return formatKibanaSpecWithComments(kibanaSpec.value)
   }
   if (!props.spec) return ''
   return JSON.stringify(props.spec, null, 2)
@@ -224,7 +249,7 @@ function validateAndUpdate() {
       
       <!-- Line numbers overlay hint -->
       <div class="absolute bottom-4 right-4 text-xs text-slate-500">
-        JSON · {{ editedSpec.split('\n').length }} lines
+        {{ specMode === 'kibana' ? 'HJSON' : 'JSON' }} · {{ editedSpec.split('\n').length }} lines
       </div>
     </div>
 

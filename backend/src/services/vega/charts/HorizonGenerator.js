@@ -219,10 +219,9 @@ export class HorizonGenerator extends VegaGeneratorBase {
       }
     };
 
-    if (useContext || bucketType === 'date_histogram') {
-      urlConfig['%context%'] = true;
-      urlConfig['%timefield%'] = timeField;
-    }
+    // Always add Kibana context placeholders for dashboard filter integration
+    urlConfig['%context%'] = true;
+    urlConfig['%timefield%'] = timeField;
 
     const transforms = [
       { calculate: 'datum.key_as_string || datum.key', as: 'x' },

@@ -2,8 +2,17 @@ import { Router } from 'express';
 import { AggregationService } from '../services/aggregationService.js';
 import { AppError } from '../middleware/errorHandler.js';
 import { logger } from '../middleware/logger.js';
+import { getClientForRequest } from '../middleware/connectionMiddleware.js';
 
 const router = Router();
+
+/**
+ * Helper to get ES client for a request
+ * Uses user-provided credentials from headers, or falls back to env config
+ */
+function getClient(req) {
+  return getClientForRequest(req);
+}
 
 // Get available aggregation types
 router.get('/types', (req, res) => {
@@ -143,9 +152,9 @@ router.post('/execute', async (req, res, next) => {
       hasSplit: !!config.splitBy || !!config.splitConfig?.enabled
     });
     
-    const service = new AggregationService(index);
+    const service = new AggregationService(index, getClient(req));
     const data = await service.execute(config);
-    
+
     logger.info('Aggregation completed', { 
       index, 
       bucketCount: data.length,
@@ -242,7 +251,7 @@ router.post('/preview-query', (req, res, next) => {
       throw new AppError('Index and config are required', 400);
     }
     
-    const service = new AggregationService(index);
+    const service = new AggregationService(index, getClient(req));
     const aggs = service.buildAggregation(config);
     
     res.json({

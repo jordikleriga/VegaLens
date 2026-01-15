@@ -337,10 +337,9 @@ export class SparklineGenerator extends VegaGeneratorBase {
       }
     };
 
-    if (useContext || bucketType === 'date_histogram') {
-      urlConfig['%context%'] = true;
-      urlConfig['%timefield%'] = timeField;
-    }
+    // Always add Kibana context placeholders for dashboard filter integration
+    urlConfig['%context%'] = true;
+    urlConfig['%timefield%'] = timeField;
 
     const lineColor = this.colorConfig.singleColor || VegaGeneratorBase.DEFAULTS.singleColor;
     const colorScheme = this.colorConfig.scheme || 'category10';

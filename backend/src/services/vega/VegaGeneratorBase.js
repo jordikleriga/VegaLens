@@ -615,11 +615,9 @@ export class VegaGeneratorBase {
       }
     };
     
-    // Add Kibana context placeholders for time-based queries
-    if (isTimeBased || useContext) {
-      urlConfig['%context%'] = true;
-      urlConfig['%timefield%'] = timeField;
-    }
+    // Always add Kibana context placeholders for dashboard filter integration
+    urlConfig['%context%'] = true;
+    urlConfig['%timefield%'] = timeField;
     
     // Build base Vega-Lite spec
     const markConfig = this.getKibanaMarkConfig();
@@ -1095,9 +1093,6 @@ export class VegaGeneratorBase {
     const aggs = this.buildKibanaAggs(aggregation, timeField);
     const formatProperty = options.formatProperty || this.getKibanaFormatProperty(aggregation);
     
-    // Determine if time-based
-    const isTimeBased = aggregation?.bucketAgg?.type === 'date_histogram';
-    
     // Build URL config
     const urlConfig = {
       index: idx,
@@ -1107,12 +1102,10 @@ export class VegaGeneratorBase {
         aggs
       }
     };
-    
-    // Add Kibana context
-    if (isTimeBased || useContext) {
-      urlConfig['%context%'] = true;
-      urlConfig['%timefield%'] = timeField;
-    }
+
+    // Always add Kibana context placeholders for dashboard filter integration
+    urlConfig['%context%'] = true;
+    urlConfig['%timefield%'] = timeField;
     
     return {
       name: options.name || 'source',

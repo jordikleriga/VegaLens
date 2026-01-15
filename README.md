@@ -12,9 +12,10 @@ A powerful, visual dashboard builder for creating Vega visualizations with Elast
 - **Pre-built templates** with sample data for quick start
 
 ### Elasticsearch Integration
+- **Multiple connection modes**: Development (server-configured), Serverless, Cloud, and Self-Hosted
 - **Connect to Elasticsearch Cloud** with API key authentication
 - **Elasticsearch Serverless** support
-- **On-premise Elasticsearch** support
+- **On-premise Elasticsearch** support with username/password or API key
 - **Browse indices** and explore field mappings
 - **Query data** with full Elasticsearch DSL support
 - **Sample data preview** before building visualizations
@@ -53,11 +54,26 @@ docker compose up --build
 # Open http://localhost:3001
 ```
 
-### Docker Configuration Options
+### Connection Modes
+
+VegaLens supports four connection modes accessible from the connection settings menu:
+
+| Mode | Description | Configuration |
+|------|-------------|---------------|
+| **Development** | Uses server-configured `.env` credentials | Configure via environment variables |
+| **Serverless** | Elasticsearch Serverless | User enters endpoint + API key in UI |
+| **Elastic Cloud** | Standard Elastic Cloud deployment | User enters Cloud ID + credentials in UI |
+| **Self-Hosted** | On-premise or self-managed | User enters endpoint + credentials in UI |
+
+The **Development** mode uses environment variables configured on the server, while other modes allow users to enter their own credentials directly in the browser (stored in session storage for security).
+
+### Development Mode Configuration (Environment Variables)
+
+Configure one of the following options in `backend/.env`:
 
 **Option 1: Elasticsearch Serverless**
 ```env
-ELASTIC_SERVERLESS_ENDPOINT=https://your-project.es.region.aws.elastic.cloud
+ELASTIC_SERVERLESS_ENDPOINT=https://your-project.es.region.gcp.elastic.cloud
 ELASTIC_API_KEY=your-api-key-here
 ```
 
@@ -65,13 +81,19 @@ ELASTIC_API_KEY=your-api-key-here
 ```env
 ELASTIC_CLOUD_ID=deployment-name:base64encodedstring
 ELASTIC_API_KEY=your-api-key-here
+# Or use username/password instead of API key:
+# ELASTIC_USERNAME=elastic
+# ELASTIC_PASSWORD=your-password
 ```
 
-**Option 3: On-Premise Elasticsearch**
+**Option 3: Self-Hosted / On-Premise**
 ```env
-ELASTIC_NODE=https://localhost:9200
-ELASTIC_USERNAME=elastic
-ELASTIC_PASSWORD=your-password
+ELASTIC_NODE=https://your-elasticsearch:9200
+ELASTIC_API_KEY=your-api-key-here
+# Or use username/password instead of API key:
+# ELASTIC_USERNAME=elastic
+# ELASTIC_PASSWORD=your-password
+# For self-signed certificates:
 ELASTIC_SKIP_TLS=true
 ```
 

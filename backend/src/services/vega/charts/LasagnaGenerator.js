@@ -197,10 +197,9 @@ export class LasagnaGenerator extends VegaGeneratorBase {
       }
     };
 
-    if (useContext || xBucketType === 'date_histogram') {
-      urlConfig['%context%'] = true;
-      urlConfig['%timefield%'] = timeField;
-    }
+    // Always add Kibana context placeholders for dashboard filter integration
+    urlConfig['%context%'] = true;
+    urlConfig['%timefield%'] = timeField;
 
     const transforms = [
       { flatten: ['ybucket.buckets'], as: ['yb'] },

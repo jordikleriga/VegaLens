@@ -45,3 +45,4 @@ playwright-report/
 *.tmp
 *.temp
 .cache/
+.git-credentials

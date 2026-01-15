@@ -6,9 +6,9 @@
 import { getElasticClient } from '../config/elasticsearch.js';
 
 export class AggregationService {
-  constructor(index) {
+  constructor(index, client = null) {
     this.index = index;
-    this.client = getElasticClient();
+    this.client = client || getElasticClient();
   }
 
   /**

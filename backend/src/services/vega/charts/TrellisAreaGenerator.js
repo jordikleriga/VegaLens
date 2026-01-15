@@ -235,10 +235,9 @@ export class TrellisAreaGenerator extends VegaGeneratorBase {
       }
     };
 
-    if (useContext || xBucketType === 'date_histogram') {
-      urlConfig['%context%'] = true;
-      urlConfig['%timefield%'] = timeField;
-    }
+    // Always add Kibana context placeholders for dashboard filter integration
+    urlConfig['%context%'] = true;
+    urlConfig['%timefield%'] = timeField;
 
     const colorScheme = this.config.colorScheme || 'category10';
 

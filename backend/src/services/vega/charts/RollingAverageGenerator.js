@@ -207,10 +207,9 @@ export class RollingAverageGenerator extends VegaGeneratorBase {
       }
     };
 
-    if (useContext || bucketType === 'date_histogram') {
-      urlConfig['%context%'] = true;
-      urlConfig['%timefield%'] = timeField;
-    }
+    // Always add Kibana context placeholders for dashboard filter integration
+    urlConfig['%context%'] = true;
+    urlConfig['%timefield%'] = timeField;
 
     const halfWindow = Math.floor(windowSize / 2);
 

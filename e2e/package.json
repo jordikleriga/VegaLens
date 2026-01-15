@@ -1,0 +1,51 @@
+{
+  "name": "projectflow-e2e-tests",
+  "version": "1.0.0",
+  "description": "End-to-end tests for ProjectFlow using Playwright",
+  "type": "module",
+  "scripts": {
+    "test": "playwright test",
+    "test:ui": "playwright test --ui",
+    "test:headed": "playwright test --headed",
+    "test:debug": "playwright test --debug",
+    "test:trace": "playwright test --trace on",
+    "test:report": "playwright show-report test-results/html-report",
+    "test:report:serve": "fuser -k 9323/tcp 2>/dev/null; sleep 1; playwright show-report test-results/html-report --host 0.0.0.0 --port 9323",
+    "test:single": "playwright test --grep",
+    "test:builder": "playwright test tests/builder.spec.js",
+    "test:aggregations": "playwright test tests/aggregations.spec.js",
+    "test:aggregations:headed": "playwright test tests/aggregations.spec.js --headed",
+    "test:aggregations:debug": "playwright test tests/aggregations.spec.js --debug",
+    "test:multi-level": "playwright test tests/multi-level-aggregations.spec.js",
+    "test:multi-level:headed": "playwright test tests/multi-level-aggregations.spec.js --headed",
+    "test:multi-level:debug": "playwright test tests/multi-level-aggregations.spec.js --debug",
+    "test:all-aggregations": "playwright test tests/aggregations.spec.js tests/multi-level-aggregations.spec.js",
+    "test:multi-level-charts": "playwright test tests/multi-level-charts.spec.js",
+    "test:multi-level-charts:headed": "playwright test tests/multi-level-charts.spec.js --headed",
+    "test:multi-level-charts:debug": "playwright test tests/multi-level-charts.spec.js --debug",
+    "test:p1-charts": "playwright test tests/multi-level-charts.spec.js --grep 'P1:'",
+    "test:p2-charts": "playwright test tests/multi-level-charts.spec.js --grep 'P2:'",
+    "test:p3-charts": "playwright test tests/multi-level-charts.spec.js --grep 'P3:'",
+    "test:alternatives": "playwright test tests/chart-alternatives.spec.js",
+    "test:alternatives:headed": "playwright test tests/chart-alternatives.spec.js --headed",
+    "test:alternatives:debug": "playwright test tests/chart-alternatives.spec.js --debug",
+    "test:library": "playwright test tests/library.spec.js",
+    "test:navigation": "playwright test tests/navigation.spec.js",
+    "test:a11y": "playwright test tests/accessibility.spec.js",
+    "test:rendering": "playwright test tests/rendering.spec.js",
+    "test:rendering:summary": "playwright test tests/rendering.spec.js && cat test-results/rendering-summary.json | node -e \"const s=JSON.parse(require('fs').readFileSync(0,'utf8'));console.log('\\n=== RENDERING TEST SUMMARY ===');console.log('Total:',s.totalCharts,'| Success:',s.successfulRenders,'| Partial:',s.partialRenders,'| Failed:',s.failedRenders);if(s.actionItems?.length){console.log('\\n--- ACTION ITEMS ---');s.actionItems.forEach(a=>console.log('•',a.chart,'-',a.suggestedFix.substring(0,100)+'...'))}\"",
+    "view:summary": "cat test-results/rendering-summary.json 2>/dev/null || echo 'No summary file. Run test:rendering first.'",
+    "install-browsers": "playwright install chromium"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.40.0"
+  },
+  "keywords": [
+    "playwright",
+    "e2e",
+    "testing",
+    "ui-testing"
+  ]
+}
+
+

@@ -1,0 +1,51 @@
+# Dependencies
+node_modules
+**/node_modules
+
+# Build outputs
+frontend/dist
+coverage
+.nyc_output
+
+# Development files
+.git
+.gitignore
+.github
+.vscode
+.cursor
+.claude
+.playwright-mcp
+
+# Test files
+e2e
+test-results
+tests
+**/__tests__
+*.test.js
+*.spec.js
+
+# Documentation (not needed in container)
+*.md
+!README.md
+docs
+
+# Environment files (use docker-compose env instead)
+.env
+.env.*
+!.env.example
+backend/.env
+backend/env.sample
+
+# Logs and artifacts
+*.log
+artifacts
+backend/artifacts
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE files
+*.swp
+*.swo
+*~

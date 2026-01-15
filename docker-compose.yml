@@ -1,0 +1,68 @@
+# ============================================
+# VegaLens - Docker Compose Configuration
+# ============================================
+# Run with: docker compose up
+# Build and run: docker compose up --build
+# Run in background: docker compose up -d
+
+services:
+  vegalens:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "3001:3001"
+    environment:
+      # Server Configuration
+      - NODE_ENV=production
+      - PORT=3001
+      - CORS_ORIGIN=http://localhost:3001
+      - LOG_LEVEL=INFO
+
+      # Elasticsearch Configuration (choose one method)
+      # Option 1: Elasticsearch Serverless
+      - ELASTIC_SERVERLESS_ENDPOINT=${ELASTIC_SERVERLESS_ENDPOINT:-}
+      - ELASTIC_API_KEY=${ELASTIC_API_KEY:-}
+
+      # Option 2: Elastic Cloud
+      - ELASTIC_CLOUD_ID=${ELASTIC_CLOUD_ID:-}
+
+      # Option 3: On-premise Elasticsearch
+      - ELASTIC_NODE=${ELASTIC_NODE:-}
+      - ELASTIC_USERNAME=${ELASTIC_USERNAME:-}
+      - ELASTIC_PASSWORD=${ELASTIC_PASSWORD:-}
+      - ELASTIC_SKIP_TLS=${ELASTIC_SKIP_TLS:-false}
+
+    # Mount .env file if it exists
+    env_file:
+      - path: .env
+        required: false
+
+    restart: unless-stopped
+
+    healthcheck:
+      test: ["CMD", "wget", "--no-verbose", "--tries=1", "--spider", "http://localhost:3001/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 10s
+
+# ============================================
+# Development Configuration
+# ============================================
+# Uncomment the section below for development with hot reload
+#
+#  vegalens-dev:
+#    build:
+#      context: .
+#      dockerfile: Dockerfile.dev
+#    ports:
+#      - "5173:5173"  # Frontend dev server
+#      - "3001:3001"  # Backend API
+#    volumes:
+#      - ./frontend/src:/app/frontend/src
+#      - ./backend/src:/app/backend/src
+#    environment:
+#      - NODE_ENV=development
+#    env_file:
+#      - .env

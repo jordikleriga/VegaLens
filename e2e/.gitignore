@@ -1,0 +1,17 @@
+# Test results
+test-results/
+playwright-report/
+screenshots/
+
+# Node modules
+node_modules/
+
+# Playwright state
+.playwright/
+blob-report/
+playwright/.cache/
+
+# Traces
+*.zip
+
+

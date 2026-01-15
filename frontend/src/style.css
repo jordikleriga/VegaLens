@@ -1,0 +1,189 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-slate-950 min-h-screen;
+    background-image: 
+      radial-gradient(ellipse 80% 50% at 50% -20%, rgba(14, 165, 233, 0.15), transparent),
+      radial-gradient(ellipse 60% 40% at 100% 100%, rgba(249, 115, 22, 0.1), transparent);
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-slate-900;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-ocean-700 rounded-full;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-ocean-600;
+  }
+}
+
+@layer components {
+  /* Glass morphism card */
+  .glass-card {
+    @apply bg-slate-900/60 backdrop-blur-xl border border-slate-700/50 rounded-2xl;
+    box-shadow: 
+      0 8px 32px rgba(0, 0, 0, 0.3),
+      inset 0 1px 0 rgba(255, 255, 255, 0.05);
+  }
+
+  /* Primary button */
+  .btn-primary {
+    @apply px-6 py-3 bg-gradient-to-r from-ocean-500 to-ocean-600 text-white font-semibold rounded-xl
+           hover:from-ocean-400 hover:to-ocean-500 transform hover:-translate-y-0.5 
+           transition-all duration-200 shadow-lg hover:shadow-glow
+           focus:outline-none focus:ring-2 focus:ring-ocean-400 focus:ring-offset-2 focus:ring-offset-slate-900;
+  }
+
+  /* Secondary button */
+  .btn-secondary {
+    @apply px-6 py-3 bg-slate-800/80 text-slate-200 font-semibold rounded-xl border border-slate-600/50
+           hover:bg-slate-700/80 hover:border-slate-500/50 transform hover:-translate-y-0.5 
+           transition-all duration-200
+           focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-900;
+  }
+
+  /* Coral accent button */
+  .btn-coral {
+    @apply px-6 py-3 bg-gradient-to-r from-coral-500 to-coral-600 text-white font-semibold rounded-xl
+           hover:from-coral-400 hover:to-coral-500 transform hover:-translate-y-0.5 
+           transition-all duration-200 shadow-lg hover:shadow-glow-coral
+           focus:outline-none focus:ring-2 focus:ring-coral-400 focus:ring-offset-2 focus:ring-offset-slate-900;
+  }
+
+  /* Form input */
+  .form-input {
+    @apply w-full px-4 py-3 bg-slate-800/60 border border-slate-600/50 rounded-xl text-white
+           placeholder-slate-400 focus:outline-none focus:border-ocean-500 focus:ring-2 
+           focus:ring-ocean-500/20 transition-all duration-200;
+  }
+
+  /* Form select */
+  .form-select {
+    @apply w-full px-4 py-3 bg-slate-800/60 border border-slate-600/50 rounded-xl text-white
+           focus:outline-none focus:border-ocean-500 focus:ring-2 focus:ring-ocean-500/20 
+           transition-all duration-200 cursor-pointer appearance-none
+           bg-[url('data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2224%22%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22%2394a3b8%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpolyline%20points%3D%226%209%2012%2015%2018%209%22%3E%3C%2Fpolyline%3E%3C%2Fsvg%3E')]
+           bg-[length:1.5rem] bg-[right_0.75rem_center] bg-no-repeat;
+  }
+
+  /* Form label */
+  .form-label {
+    @apply block text-sm font-medium text-slate-300 mb-2;
+  }
+
+  /* Chip/tag */
+  .chip {
+    @apply inline-flex items-center gap-1.5 px-3 py-1.5 bg-slate-800/80 border border-slate-600/50 
+           rounded-full text-sm text-slate-300 transition-colors duration-200;
+  }
+
+  .chip-active {
+    @apply bg-ocean-500/20 border-ocean-400/50 text-ocean-300;
+  }
+
+  /* Stat card */
+  .stat-card {
+    @apply glass-card p-6 flex flex-col gap-2;
+  }
+
+  .stat-value {
+    @apply text-3xl font-bold text-white;
+  }
+
+  .stat-label {
+    @apply text-sm text-slate-400;
+  }
+
+  /* Visualization type card */
+  .viz-type-card {
+    @apply glass-card p-4 cursor-pointer transition-all duration-300 hover:border-ocean-500/50 
+           hover:shadow-glow group;
+  }
+
+  .viz-type-card.selected {
+    @apply border-ocean-400 bg-ocean-500/10 shadow-glow;
+  }
+
+  /* Tab styles */
+  .tab {
+    @apply px-4 py-2 text-sm font-medium text-slate-400 border-b-2 border-transparent 
+           transition-colors duration-200 hover:text-slate-200;
+  }
+
+  .tab-active {
+    @apply text-ocean-400 border-ocean-400;
+  }
+
+  /* Dropdown menu */
+  .dropdown-menu {
+    @apply absolute z-50 mt-2 w-full min-w-[200px] py-2 bg-slate-800 border border-slate-600/50 
+           rounded-xl shadow-xl animate-fade-in overflow-hidden;
+  }
+
+  .dropdown-item {
+    @apply px-4 py-2.5 text-slate-300 hover:bg-ocean-500/20 hover:text-white cursor-pointer 
+           transition-colors duration-150;
+  }
+
+  /* Tooltip */
+  .tooltip {
+    @apply absolute z-50 px-3 py-2 text-sm text-white bg-slate-800 border border-slate-600/50 
+           rounded-lg shadow-xl animate-fade-in whitespace-nowrap;
+  }
+}
+
+@layer utilities {
+  /* Text gradient */
+  .text-gradient {
+    @apply bg-gradient-to-r from-ocean-400 via-ocean-300 to-coral-400 bg-clip-text text-transparent;
+  }
+
+  /* Glow effect */
+  .glow-ocean {
+    box-shadow: 0 0 40px rgba(14, 165, 233, 0.4);
+  }
+
+  .glow-coral {
+    box-shadow: 0 0 40px rgba(249, 115, 22, 0.4);
+  }
+
+  /* Hide scrollbar but keep functionality */
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+/* Vega embed overrides */
+.vega-embed {
+  @apply w-full;
+}
+
+.vega-embed .vega-actions {
+  @apply hidden;
+}
+
+.vega-embed canvas {
+  @apply rounded-xl;
+}
+

@@ -1,0 +1,610 @@
+{
+  "total": 40,
+  "passed": 40,
+  "failed": 0,
+  "skipped": 0,
+  "details": [
+    {
+      "chartType": "bar",
+      "steps": {
+        "generateSpec": "ok",
+        "createVis": "ok"
+      },
+      "visId": "test-vis-1767843902995",
+      "url": "https://serverless-testing-a1a86d.kb.us-central1.gcp.elastic.cloud/app/visualize#/edit/test-vis-1767843902995?embed=true"
+    },
+    {
+      "chartType": "line",
+      "steps": {
+        "generateSpec": "ok",
+        "createVis": "ok"
+      },
+      "visId": "test-vis-1767843903392",
+      "url": "https://serverless-testing-a1a86d.kb.us-central1.gcp.elastic.cloud/app/visualize#/edit/test-vis-1767843903392?embed=true"
+    },
+    {
+      "chartType": "area",
+      "steps": {
+        "generateSpec": "ok",
+        "createVis": "ok"
+      },
+      "visId": "test-vis-1767843904321",
+      "url": "https://serverless-testing-a1a86d.kb.us-central1.gcp.elastic.cloud/app/visualize#/edit/test-vis-1767843904321?embed=true"
+    },
+    {
+      "chartType": "rolling_average",
+      "steps": {
+        "generateSpec": "ok",
+        "createVis": "ok"
+      },
+      "visId": "test-vis-1767843905330",
+      "url": "https://serverless-testing-a1a86d.kb.us-central1.gcp.elastic.cloud/app/visualize#/edit/test-vis-1767843905330?embed=true"
+    },
+    {
+      "chartType": "sparkline",
+      "steps": {
+        "generateSpec": "ok",
+        "createVis": "ok"
+      },
+      "visId": "test-vis-1767843906340",
+      "url": "https://serverless-testing-a1a86d.kb.us-central1.gcp.elastic.cloud/app/visualize#/edit/test-vis-1767843906340?embed=true"
+    },
+    {
+      "chartType": "horizon",
+      "steps": {
+        "generateSpec": "ok",
+        "createVis": "ok"
+      },
+      "visId": "test-vis-1767843907351",
+      "url": "https://serverless-testing-a1a86d.kb.us-central1.gcp.elastic.cloud/app/visualize#/edit/test-vis-1767843907351?embed=true"
+    },
+    {
+      "chartType": "streamgraph",
+      "steps": {
+        "generateSpec": "ok",
+        "createVis": "ok"
+      },
+      "visId": "test-vis-1767843908357",
+      "url": "https://serverless-testing-a1a86d.kb.us-central1.gcp.elastic.cloud/app/visualize#/edit/test-vis-1767843908357?embed=true"
+    },
+    {
+      "chartType": "lasagna",
+      "steps": {
+        "generateSpec": "ok",
+        "createVis": "ok"
+      },
+      "visId": "test-vis-1767843909367",
+      "url": "https://serverless-testing-a1a86d.kb.us-central1.gcp.elastic.cloud/app/visualize#/edit/test-vis-1767843909367?embed=true"
+    },
+    {
+      "chartType": "dual_axis",
+      "steps": {
+        "generateSpec": "ok",
+        "createVis": "ok"
+      },
+      "visId": "test-vis-1767843910378",
+      "url": "https://serverless-testing-a1a86d.kb.us-central1.gcp.elastic.cloud/app/visualize#/edit/test-vis-1767843910378?embed=true"
+    },
+    {
+      "chartType": "trellis_area",
+      "steps": {
+        "generateSpec": "ok",
+        "createVis": "ok"
+      },
+      "visId": "test-vis-1767843911386",
+      "url": "https://serverless-testing-a1a86d.kb.us-central1.gcp.elastic.cloud/app/visualize#/edit/test-vis-1767843911386?embed=true"
+    },
+    {
+      "chartType": "pie",
+      "steps": {
+        "generateSpec": "ok",
+        "createVis": "ok"
+      },
+      "visId": "test-vis-1767843912396",
+      "url": "https://serverless-testing-a1a86d.kb.us-central1.gcp.elastic.cloud/app/visualize#/edit/test-vis-1767843912396?embed=true"
+    },
+    {
+      "chartType": "donut",
+      "steps": {
+        "generateSpec": "ok",
+        "createVis": "ok"
+      },
+      "visId": "test-vis-1767843913407",
+      "url": "https://serverless-testing-a1a86d.kb.us-central1.gcp.elastic.cloud/app/visualize#/edit/test-vis-1767843913407?embed=true"
+    },
+    {
+      "chartType": "marimekko",
+      "steps": {
+        "generateSpec": "ok",
+        "createVis": "ok"
+      },
+      "visId": "test-vis-1767843914415",
+      "url": "https://serverless-testing-a1a86d.kb.us-central1.gcp.elastic.cloud/app/visualize#/edit/test-vis-1767843914415?embed=true"
+    },
+    {
+      "chartType": "scatter",
+      "steps": {
+        "generateSpec": "ok",
+        "createVis": "ok"
+      },
+      "visId": "test-vis-1767843915425",
+      "url": "https://serverless-testing-a1a86d.kb.us-central1.gcp.elastic.cloud/app/visualize#/edit/test-vis-1767843915425?embed=true"
+    },
+    {
+      "chartType": "bubble",
+      "steps": {
+        "generateSpec": "ok",
+        "createVis": "ok"
+      },
+      "visId": "test-vis-1767843916437",
+      "url": "https://serverless-testing-a1a86d.kb.us-central1.gcp.elastic.cloud/app/visualize#/edit/test-vis-1767843916437?embed=true"
+    },
+    {
+      "chartType": "heatmap",
+      "steps": {
+        "generateSpec": "ok",
+        "createVis": "ok"
+      },
+      "visId": "test-vis-1767843917446",
+      "url": "https://serverless-testing-a1a86d.kb.us-central1.gcp.elastic.cloud/app/visualize#/edit/test-vis-1767843917446?embed=true"
+    },
+    {
+      "chartType": "binned_heatmap",
+      "steps": {
+        "generateSpec": "ok",
+        "createVis": "ok"
+      },
+      "visId": "test-vis-1767843918455",
+      "url": "https://serverless-testing-a1a86d.kb.us-central1.gcp.elastic.cloud/app/visualize#/edit/test-vis-1767843918455?embed=true"
+    },
+    {
+      "chartType": "heatlane",
+      "steps": {
+        "generateSpec": "ok",
+        "createVis": "ok"
+      },
+      "visId": "test-vis-1767843919465",
+      "url": "https://serverless-testing-a1a86d.kb.us-central1.gcp.elastic.cloud/app/visualize#/edit/test-vis-1767843919465?embed=true"
+    },
+    {
+      "chartType": "histogram",
+      "steps": {
+        "generateSpec": "ok",
+        "createVis": "ok"
+      },
+      "visId": "test-vis-1767843920474",
+      "url": "https://serverless-testing-a1a86d.kb.us-central1.gcp.elastic.cloud/app/visualize#/edit/test-vis-1767843920474?embed=true"
+    },
+    {
+      "chartType": "boxplot",
+      "steps": {
+        "generateSpec": "ok",
+        "createVis": "ok"
+      },
+      "visId": "test-vis-1767843921484",
+      "url": "https://serverless-testing-a1a86d.kb.us-central1.gcp.elastic.cloud/app/visualize#/edit/test-vis-1767843921484?embed=true"
+    },
+    {
+      "chartType": "density",
+      "steps": {
+        "generateSpec": "ok",
+        "createVis": "ok"
+      },
+      "visId": "test-vis-1767843922493",
+      "url": "https://serverless-testing-a1a86d.kb.us-central1.gcp.elastic.cloud/app/visualize#/edit/test-vis-1767843922493?embed=true"
+    },
+    {
+      "chartType": "error_bars",
+      "steps": {
+        "generateSpec": "ok",
+        "createVis": "ok"
+      },
+      "visId": "test-vis-1767843923503",
+      "url": "https://serverless-testing-a1a86d.kb.us-central1.gcp.elastic.cloud/app/visualize#/edit/test-vis-1767843923503?embed=true"
+    },
+    {
+      "chartType": "violin",
+      "steps": {
+        "generateSpec": "ok",
+        "createVis": "ok"
+      },
+      "visId": "test-vis-1767843924515",
+      "url": "https://serverless-testing-a1a86d.kb.us-central1.gcp.elastic.cloud/app/visualize#/edit/test-vis-1767843924515?embed=true"
+    },
+    {
+      "chartType": "treemap",
+      "steps": {
+        "generateSpec": "ok",
+        "createVis": "ok"
+      },
+      "visId": "test-vis-1767843925525",
+      "url": "https://serverless-testing-a1a86d.kb.us-central1.gcp.elastic.cloud/app/visualize#/edit/test-vis-1767843925525?embed=true"
+    },
+    {
+      "chartType": "circle_packing",
+      "steps": {
+        "generateSpec": "ok",
+        "createVis": "ok"
+      },
+      "visId": "test-vis-1767843926535",
+      "url": "https://serverless-testing-a1a86d.kb.us-central1.gcp.elastic.cloud/app/visualize#/edit/test-vis-1767843926535?embed=true"
+    },
+    {
+      "chartType": "metric",
+      "steps": {
+        "generateSpec": "ok",
+        "createVis": "ok"
+      },
+      "visId": "test-vis-1767843927542",
+      "url": "https://serverless-testing-a1a86d.kb.us-central1.gcp.elastic.cloud/app/visualize#/edit/test-vis-1767843927542?embed=true"
+    },
+    {
+      "chartType": "gauge",
+      "steps": {
+        "generateSpec": "ok",
+        "createVis": "ok"
+      },
+      "visId": "test-vis-1767843928551",
+      "url": "https://serverless-testing-a1a86d.kb.us-central1.gcp.elastic.cloud/app/visualize#/edit/test-vis-1767843928551?embed=true"
+    },
+    {
+      "chartType": "radial",
+      "steps": {
+        "generateSpec": "ok",
+        "createVis": "ok"
+      },
+      "visId": "test-vis-1767843929559",
+      "url": "https://serverless-testing-a1a86d.kb.us-central1.gcp.elastic.cloud/app/visualize#/edit/test-vis-1767843929559?embed=true"
+    },
+    {
+      "chartType": "radar",
+      "steps": {
+        "generateSpec": "ok",
+        "createVis": "ok"
+      },
+      "visId": "test-vis-1767843930570",
+      "url": "https://serverless-testing-a1a86d.kb.us-central1.gcp.elastic.cloud/app/visualize#/edit/test-vis-1767843930570?embed=true"
+    },
+    {
+      "chartType": "bullet",
+      "steps": {
+        "generateSpec": "ok",
+        "createVis": "ok"
+      },
+      "visId": "test-vis-1767843931580",
+      "url": "https://serverless-testing-a1a86d.kb.us-central1.gcp.elastic.cloud/app/visualize#/edit/test-vis-1767843931580?embed=true"
+    },
+    {
+      "chartType": "sankey",
+      "steps": {
+        "generateSpec": "ok",
+        "createVis": "ok"
+      },
+      "visId": "test-vis-1767843932589",
+      "url": "https://serverless-testing-a1a86d.kb.us-central1.gcp.elastic.cloud/app/visualize#/edit/test-vis-1767843932589?embed=true"
+    },
+    {
+      "chartType": "waterfall",
+      "steps": {
+        "generateSpec": "ok",
+        "createVis": "ok"
+      },
+      "visId": "test-vis-1767843933599",
+      "url": "https://serverless-testing-a1a86d.kb.us-central1.gcp.elastic.cloud/app/visualize#/edit/test-vis-1767843933599?embed=true"
+    },
+    {
+      "chartType": "funnel",
+      "steps": {
+        "generateSpec": "ok",
+        "createVis": "ok"
+      },
+      "visId": "test-vis-1767843934611",
+      "url": "https://serverless-testing-a1a86d.kb.us-central1.gcp.elastic.cloud/app/visualize#/edit/test-vis-1767843934611?embed=true"
+    },
+    {
+      "chartType": "chord",
+      "steps": {
+        "generateSpec": "ok",
+        "createVis": "ok"
+      },
+      "visId": "test-vis-1767843935620",
+      "url": "https://serverless-testing-a1a86d.kb.us-central1.gcp.elastic.cloud/app/visualize#/edit/test-vis-1767843935620?embed=true"
+    },
+    {
+      "chartType": "wordcloud",
+      "steps": {
+        "generateSpec": "ok",
+        "createVis": "ok"
+      },
+      "visId": "test-vis-1767843936629",
+      "url": "https://serverless-testing-a1a86d.kb.us-central1.gcp.elastic.cloud/app/visualize#/edit/test-vis-1767843936629?embed=true"
+    },
+    {
+      "chartType": "table",
+      "steps": {
+        "generateSpec": "ok",
+        "createVis": "ok"
+      },
+      "visId": "test-vis-1767843937638",
+      "url": "https://serverless-testing-a1a86d.kb.us-central1.gcp.elastic.cloud/app/visualize#/edit/test-vis-1767843937638?embed=true"
+    },
+    {
+      "chartType": "ternary",
+      "steps": {
+        "generateSpec": "ok",
+        "createVis": "ok"
+      },
+      "visId": "test-vis-1767843938647",
+      "url": "https://serverless-testing-a1a86d.kb.us-central1.gcp.elastic.cloud/app/visualize#/edit/test-vis-1767843938647?embed=true"
+    },
+    {
+      "chartType": "comet",
+      "steps": {
+        "generateSpec": "ok",
+        "createVis": "ok"
+      },
+      "visId": "test-vis-1767843939657",
+      "url": "https://serverless-testing-a1a86d.kb.us-central1.gcp.elastic.cloud/app/visualize#/edit/test-vis-1767843939657?embed=true"
+    },
+    {
+      "chartType": "population_pyramid",
+      "steps": {
+        "generateSpec": "ok",
+        "createVis": "ok"
+      },
+      "visId": "test-vis-1767843940666",
+      "url": "https://serverless-testing-a1a86d.kb.us-central1.gcp.elastic.cloud/app/visualize#/edit/test-vis-1767843940666?embed=true"
+    },
+    {
+      "chartType": "pareto",
+      "steps": {
+        "generateSpec": "ok",
+        "createVis": "ok"
+      },
+      "visId": "test-vis-1767843941677",
+      "url": "https://serverless-testing-a1a86d.kb.us-central1.gcp.elastic.cloud/app/visualize#/edit/test-vis-1767843941677?embed=true"
+    }
+  ],
+  "visualizations": [
+    {
+      "chartType": "bar",
+      "id": "test-vis-1767843902995",
+      "title": "[TEST] bar",
+      "url": "https://serverless-testing-a1a86d.kb.us-central1.gcp.elastic.cloud/app/visualize#/edit/test-vis-1767843902995?embed=true"
+    },
+    {
+      "chartType": "line",
+      "id": "test-vis-1767843903392",
+      "title": "[TEST] line",
+      "url": "https://serverless-testing-a1a86d.kb.us-central1.gcp.elastic.cloud/app/visualize#/edit/test-vis-1767843903392?embed=true"
+    },
+    {
+      "chartType": "area",
+      "id": "test-vis-1767843904321",
+      "title": "[TEST] area",
+      "url": "https://serverless-testing-a1a86d.kb.us-central1.gcp.elastic.cloud/app/visualize#/edit/test-vis-1767843904321?embed=true"
+    },
+    {
+      "chartType": "rolling_average",
+      "id": "test-vis-1767843905330",
+      "title": "[TEST] rolling_average",
+      "url": "https://serverless-testing-a1a86d.kb.us-central1.gcp.elastic.cloud/app/visualize#/edit/test-vis-1767843905330?embed=true"
+    },
+    {
+      "chartType": "sparkline",
+      "id": "test-vis-1767843906340",
+      "title": "[TEST] sparkline",
+      "url": "https://serverless-testing-a1a86d.kb.us-central1.gcp.elastic.cloud/app/visualize#/edit/test-vis-1767843906340?embed=true"
+    },
+    {
+      "chartType": "horizon",
+      "id": "test-vis-1767843907351",
+      "title": "[TEST] horizon",
+      "url": "https://serverless-testing-a1a86d.kb.us-central1.gcp.elastic.cloud/app/visualize#/edit/test-vis-1767843907351?embed=true"
+    },
+    {
+      "chartType": "streamgraph",
+      "id": "test-vis-1767843908357",
+      "title": "[TEST] streamgraph",
+      "url": "https://serverless-testing-a1a86d.kb.us-central1.gcp.elastic.cloud/app/visualize#/edit/test-vis-1767843908357?embed=true"
+    },
+    {
+      "chartType": "lasagna",
+      "id": "test-vis-1767843909367",
+      "title": "[TEST] lasagna",
+      "url": "https://serverless-testing-a1a86d.kb.us-central1.gcp.elastic.cloud/app/visualize#/edit/test-vis-1767843909367?embed=true"
+    },
+    {
+      "chartType": "dual_axis",
+      "id": "test-vis-1767843910378",
+      "title": "[TEST] dual_axis",
+      "url": "https://serverless-testing-a1a86d.kb.us-central1.gcp.elastic.cloud/app/visualize#/edit/test-vis-1767843910378?embed=true"
+    },
+    {
+      "chartType": "trellis_area",
+      "id": "test-vis-1767843911386",
+      "title": "[TEST] trellis_area",
+      "url": "https://serverless-testing-a1a86d.kb.us-central1.gcp.elastic.cloud/app/visualize#/edit/test-vis-1767843911386?embed=true"
+    },
+    {
+      "chartType": "pie",
+      "id": "test-vis-1767843912396",
+      "title": "[TEST] pie",
+      "url": "https://serverless-testing-a1a86d.kb.us-central1.gcp.elastic.cloud/app/visualize#/edit/test-vis-1767843912396?embed=true"
+    },
+    {
+      "chartType": "donut",
+      "id": "test-vis-1767843913407",
+      "title": "[TEST] donut",
+      "url": "https://serverless-testing-a1a86d.kb.us-central1.gcp.elastic.cloud/app/visualize#/edit/test-vis-1767843913407?embed=true"
+    },
+    {
+      "chartType": "marimekko",
+      "id": "test-vis-1767843914415",
+      "title": "[TEST] marimekko",
+      "url": "https://serverless-testing-a1a86d.kb.us-central1.gcp.elastic.cloud/app/visualize#/edit/test-vis-1767843914415?embed=true"
+    },
+    {
+      "chartType": "scatter",
+      "id": "test-vis-1767843915425",
+      "title": "[TEST] scatter",
+      "url": "https://serverless-testing-a1a86d.kb.us-central1.gcp.elastic.cloud/app/visualize#/edit/test-vis-1767843915425?embed=true"
+    },
+    {
+      "chartType": "bubble",
+      "id": "test-vis-1767843916437",
+      "title": "[TEST] bubble",
+      "url": "https://serverless-testing-a1a86d.kb.us-central1.gcp.elastic.cloud/app/visualize#/edit/test-vis-1767843916437?embed=true"
+    },
+    {
+      "chartType": "heatmap",
+      "id": "test-vis-1767843917446",
+      "title": "[TEST] heatmap",
+      "url": "https://serverless-testing-a1a86d.kb.us-central1.gcp.elastic.cloud/app/visualize#/edit/test-vis-1767843917446?embed=true"
+    },
+    {
+      "chartType": "binned_heatmap",
+      "id": "test-vis-1767843918455",
+      "title": "[TEST] binned_heatmap",
+      "url": "https://serverless-testing-a1a86d.kb.us-central1.gcp.elastic.cloud/app/visualize#/edit/test-vis-1767843918455?embed=true"
+    },
+    {
+      "chartType": "heatlane",
+      "id": "test-vis-1767843919465",
+      "title": "[TEST] heatlane",
+      "url": "https://serverless-testing-a1a86d.kb.us-central1.gcp.elastic.cloud/app/visualize#/edit/test-vis-1767843919465?embed=true"
+    },
+    {
+      "chartType": "histogram",
+      "id": "test-vis-1767843920474",
+      "title": "[TEST] histogram",
+      "url": "https://serverless-testing-a1a86d.kb.us-central1.gcp.elastic.cloud/app/visualize#/edit/test-vis-1767843920474?embed=true"
+    },
+    {
+      "chartType": "boxplot",
+      "id": "test-vis-1767843921484",
+      "title": "[TEST] boxplot",
+      "url": "https://serverless-testing-a1a86d.kb.us-central1.gcp.elastic.cloud/app/visualize#/edit/test-vis-1767843921484?embed=true"
+    },
+    {
+      "chartType": "density",
+      "id": "test-vis-1767843922493",
+      "title": "[TEST] density",
+      "url": "https://serverless-testing-a1a86d.kb.us-central1.gcp.elastic.cloud/app/visualize#/edit/test-vis-1767843922493?embed=true"
+    },
+    {
+      "chartType": "error_bars",
+      "id": "test-vis-1767843923503",
+      "title": "[TEST] error_bars",
+      "url": "https://serverless-testing-a1a86d.kb.us-central1.gcp.elastic.cloud/app/visualize#/edit/test-vis-1767843923503?embed=true"
+    },
+    {
+      "chartType": "violin",
+      "id": "test-vis-1767843924515",
+      "title": "[TEST] violin",
+      "url": "https://serverless-testing-a1a86d.kb.us-central1.gcp.elastic.cloud/app/visualize#/edit/test-vis-1767843924515?embed=true"
+    },
+    {
+      "chartType": "treemap",
+      "id": "test-vis-1767843925525",
+      "title": "[TEST] treemap",
+      "url": "https://serverless-testing-a1a86d.kb.us-central1.gcp.elastic.cloud/app/visualize#/edit/test-vis-1767843925525?embed=true"
+    },
+    {
+      "chartType": "circle_packing",
+      "id": "test-vis-1767843926535",
+      "title": "[TEST] circle_packing",
+      "url": "https://serverless-testing-a1a86d.kb.us-central1.gcp.elastic.cloud/app/visualize#/edit/test-vis-1767843926535?embed=true"
+    },
+    {
+      "chartType": "metric",
+      "id": "test-vis-1767843927542",
+      "title": "[TEST] metric",
+      "url": "https://serverless-testing-a1a86d.kb.us-central1.gcp.elastic.cloud/app/visualize#/edit/test-vis-1767843927542?embed=true"
+    },
+    {
+      "chartType": "gauge",
+      "id": "test-vis-1767843928551",
+      "title": "[TEST] gauge",
+      "url": "https://serverless-testing-a1a86d.kb.us-central1.gcp.elastic.cloud/app/visualize#/edit/test-vis-1767843928551?embed=true"
+    },
+    {
+      "chartType": "radial",
+      "id": "test-vis-1767843929559",
+      "title": "[TEST] radial",
+      "url": "https://serverless-testing-a1a86d.kb.us-central1.gcp.elastic.cloud/app/visualize#/edit/test-vis-1767843929559?embed=true"
+    },
+    {
+      "chartType": "radar",
+      "id": "test-vis-1767843930570",
+      "title": "[TEST] radar",
+      "url": "https://serverless-testing-a1a86d.kb.us-central1.gcp.elastic.cloud/app/visualize#/edit/test-vis-1767843930570?embed=true"
+    },
+    {
+      "chartType": "bullet",
+      "id": "test-vis-1767843931580",
+      "title": "[TEST] bullet",
+      "url": "https://serverless-testing-a1a86d.kb.us-central1.gcp.elastic.cloud/app/visualize#/edit/test-vis-1767843931580?embed=true"
+    },
+    {
+      "chartType": "sankey",
+      "id": "test-vis-1767843932589",
+      "title": "[TEST] sankey",
+      "url": "https://serverless-testing-a1a86d.kb.us-central1.gcp.elastic.cloud/app/visualize#/edit/test-vis-1767843932589?embed=true"
+    },
+    {
+      "chartType": "waterfall",
+      "id": "test-vis-1767843933599",
+      "title": "[TEST] waterfall",
+      "url": "https://serverless-testing-a1a86d.kb.us-central1.gcp.elastic.cloud/app/visualize#/edit/test-vis-1767843933599?embed=true"
+    },
+    {
+      "chartType": "funnel",
+      "id": "test-vis-1767843934611",
+      "title": "[TEST] funnel",
+      "url": "https://serverless-testing-a1a86d.kb.us-central1.gcp.elastic.cloud/app/visualize#/edit/test-vis-1767843934611?embed=true"
+    },
+    {
+      "chartType": "chord",
+      "id": "test-vis-1767843935620",
+      "title": "[TEST] chord",
+      "url": "https://serverless-testing-a1a86d.kb.us-central1.gcp.elastic.cloud/app/visualize#/edit/test-vis-1767843935620?embed=true"
+    },
+    {
+      "chartType": "wordcloud",
+      "id": "test-vis-1767843936629",
+      "title": "[TEST] wordcloud",
+      "url": "https://serverless-testing-a1a86d.kb.us-central1.gcp.elastic.cloud/app/visualize#/edit/test-vis-1767843936629?embed=true"
+    },
+    {
+      "chartType": "table",
+      "id": "test-vis-1767843937638",
+      "title": "[TEST] table",
+      "url": "https://serverless-testing-a1a86d.kb.us-central1.gcp.elastic.cloud/app/visualize#/edit/test-vis-1767843937638?embed=true"
+    },
+    {
+      "chartType": "ternary",
+      "id": "test-vis-1767843938647",
+      "title": "[TEST] ternary",
+      "url": "https://serverless-testing-a1a86d.kb.us-central1.gcp.elastic.cloud/app/visualize#/edit/test-vis-1767843938647?embed=true"
+    },
+    {
+      "chartType": "comet",
+      "id": "test-vis-1767843939657",
+      "title": "[TEST] comet",
+      "url": "https://serverless-testing-a1a86d.kb.us-central1.gcp.elastic.cloud/app/visualize#/edit/test-vis-1767843939657?embed=true"
+    },
+    {
+      "chartType": "population_pyramid",
+      "id": "test-vis-1767843940666",
+      "title": "[TEST] population_pyramid",
+      "url": "https://serverless-testing-a1a86d.kb.us-central1.gcp.elastic.cloud/app/visualize#/edit/test-vis-1767843940666?embed=true"
+    },
+    {
+      "chartType": "pareto",
+      "id": "test-vis-1767843941677",
+      "title": "[TEST] pareto",
+      "url": "https://serverless-testing-a1a86d.kb.us-central1.gcp.elastic.cloud/app/visualize#/edit/test-vis-1767843941677?embed=true"
+    }
+  ]
+}

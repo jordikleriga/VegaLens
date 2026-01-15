@@ -1,0 +1,47 @@
+{
+  "name": "vega-dashboard-builder",
+  "version": "1.0.0",
+  "description": "A visual dashboard builder for creating Vega visualizations with Elasticsearch data",
+  "private": true,
+  "scripts": {
+    "dev": "concurrently \"npm run dev:backend\" \"npm run dev:frontend\"",
+    "dev:backend": "cd backend && npm run dev",
+    "dev:frontend": "cd frontend && npm run dev",
+    "install:all": "npm install && cd backend && npm install && cd ../frontend && npm install && cd ../e2e && npm install",
+    "build": "cd frontend && npm run build",
+    "start": "cd backend && npm start",
+    "test": "cd backend && npm test",
+    "test:quick": "./scripts/test-charts.sh",
+    "test:watch": "cd backend && npm run test:watch",
+    "test:e2e": "cd e2e && npm test",
+    "test:e2e:alternatives": "cd e2e && npm run test:alternatives",
+    "test:e2e:alternatives:headed": "cd e2e && npm run test:alternatives:headed",
+    "test:e2e:ui": "xvfb-run cd e2e && npm run test:ui",
+    "test:e2e:headed": "cd e2e && npm run test:headed",
+    "test:e2e:debug": "cd e2e && npm run test:debug",
+    "test:e2e:report": "cd e2e && npm run test:report",
+    "test:e2e:report:serve": "cd e2e && npm run test:report:serve",
+    "test:rendering": "cd e2e && npm run test:rendering",
+    "view:rendering-summary": "cat e2e/test-results/rendering-summary.json 2>/dev/null || echo 'No summary. Run npm run test:rendering first.'",
+    "test:all": "npm run test && npm run test:e2e",
+    "generate:thumbnails": "node scripts/generate-thumbnails.js"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2",
+    "vega": "^6.2.0",
+    "vega-lite": "^6.4.1"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "keywords": [
+    "vega",
+    "elasticsearch",
+    "kibana",
+    "dashboard",
+    "visualization",
+    "vue"
+  ],
+  "author": "",
+  "license": "MIT"
+}

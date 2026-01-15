@@ -1,0 +1,18 @@
+{
+  "all": true,
+  "include": ["src/**/*.js"],
+  "exclude": [
+    "src/config/**",
+    "tests/**",
+    "**/*.test.js",
+    "**/*.spec.js"
+  ],
+  "reporter": ["text", "json", "html", "lcov"],
+  "check-coverage": true,
+  "lines": 90,
+  "functions": 90,
+  "branches": 90,
+  "statements": 90,
+  "temp-dir": ".nyc_output",
+  "report-dir": "coverage"
+}

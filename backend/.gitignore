@@ -1,0 +1,29 @@
+# Dependencies
+node_modules/
+
+# Environment variables
+.env
+.env.local
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+
+# Test artifacts (exclude from version control)
+artifacts/
+!artifacts/.gitkeep
+
+# Visual regression test artifacts
+tests/kibana-validation/fixtures/baseline-screenshots/*
+!tests/kibana-validation/fixtures/baseline-screenshots/.gitkeep
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo

@@ -1,0 +1,41 @@
+{
+  "name": "vega-dashboard-builder",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs --fix --ignore-path .gitignore",
+    "test": "vitest",
+    "test:ui": "vitest --ui",
+    "test:coverage": "vitest run --coverage",
+    "test:watch": "vitest watch",
+    "test:debug": "vitest --inspect-brk --no-file-parallelism"
+  },
+  "dependencies": {
+    "@vueuse/core": "^10.7.0",
+    "axios": "^1.6.2",
+    "lucide-vue-next": "^0.294.0",
+    "pinia": "^2.1.7",
+    "vega": "^5.25.0",
+    "vega-embed": "^6.23.0",
+    "vega-lite": "^5.16.3",
+    "vue": "^3.3.11",
+    "vue-router": "^4.2.5"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^4.5.2",
+    "@vitest/coverage-v8": "^4.0.16",
+    "@vitest/ui": "^4.0.16",
+    "@vue/test-utils": "^2.4.6",
+    "autoprefixer": "^10.4.16",
+    "axios-mock-adapter": "^2.1.0",
+    "happy-dom": "^20.0.11",
+    "postcss": "^8.4.32",
+    "tailwindcss": "^3.3.6",
+    "vite": "^5.0.8",
+    "vitest": "^4.0.16"
+  }
+}

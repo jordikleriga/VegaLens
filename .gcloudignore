@@ -1,0 +1,42 @@
+# ============================================
+# VegaLens - Cloud Build Ignore File
+# ============================================
+# Files to exclude from Cloud Build uploads
+
+# Git
+.git/
+.gitignore
+
+# Dependencies (will be installed during build)
+node_modules/
+frontend/node_modules/
+backend/node_modules/
+e2e/node_modules/
+
+# Development files
+.env
+.env.local
+.env.*.local
+*.log
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+.DS_Store
+
+# Test artifacts
+backend/artifacts/
+backend/tests/debug-output.png
+e2e/test-results/
+test-results/
+test_output.log
+coverage/
+
+# Documentation (not needed for runtime)
+docs/
+
+# Local development
+.cursor/
+

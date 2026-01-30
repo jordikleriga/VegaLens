@@ -309,6 +309,72 @@ docker compose logs -f
 docker compose down
 ```
 
+### Deploying to Google Cloud Run
+
+VegaLens can be deployed to Google Cloud Run for a fully managed, serverless deployment.
+
+#### Quick Deploy
+
+```bash
+# First-time setup (enables APIs, creates Artifact Registry)
+./scripts/deploy-cloudrun.sh --project YOUR_PROJECT_ID --setup
+
+# Deploy
+./scripts/deploy-cloudrun.sh --project YOUR_PROJECT_ID
+```
+
+#### Manual Deployment
+
+1. **Enable required APIs and create Artifact Registry:**
+   ```bash
+   gcloud services enable cloudbuild.googleapis.com run.googleapis.com artifactregistry.googleapis.com --project=YOUR_PROJECT
+   gcloud artifacts repositories create vegalens --repository-format=docker --location=us-central1
+   ```
+
+2. **Build and push the image:**
+   ```bash
+   gcloud auth configure-docker us-central1-docker.pkg.dev
+   docker build -t us-central1-docker.pkg.dev/YOUR_PROJECT/vegalens/vegalens:latest .
+   docker push us-central1-docker.pkg.dev/YOUR_PROJECT/vegalens/vegalens:latest
+   ```
+
+3. **Deploy to Cloud Run:**
+   ```bash
+   gcloud run deploy vegalens \
+     --image=us-central1-docker.pkg.dev/YOUR_PROJECT/vegalens/vegalens:latest \
+     --region=us-central1 \
+     --platform=managed \
+     --allow-unauthenticated \
+     --port=3001 \
+     --memory=512Mi
+   ```
+
+4. **Configure Elasticsearch credentials:**
+   ```bash
+   # Option A: Environment variables (less secure)
+   gcloud run services update vegalens --region=us-central1 \
+     --set-env-vars="ELASTIC_SERVERLESS_ENDPOINT=https://your-endpoint,ELASTIC_API_KEY=your-key"
+
+   # Option B: Secret Manager (recommended for production)
+   echo -n "your-api-key" | gcloud secrets create elastic-api-key --data-file=-
+   gcloud run services update vegalens --region=us-central1 \
+     --set-secrets="ELASTIC_API_KEY=elastic-api-key:latest"
+   ```
+
+#### Using Cloud Build (CI/CD)
+
+For automated builds triggered by git pushes:
+
+```bash
+# Submit a build manually
+gcloud builds submit --config cloudbuild.yaml
+
+# Or set up a Cloud Build trigger in the GCP Console
+# to automatically deploy on push to main branch
+```
+
+See `cloudbuild.yaml` for the full build configuration and `cloudrun-service.yaml` for the service definition.
+
 ### Running Tests
 
 ```bash

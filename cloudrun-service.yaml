@@ -1,0 +1,128 @@
+# ============================================
+# VegaLens - Cloud Run Service Configuration
+# ============================================
+# This file defines the Cloud Run service configuration.
+#
+# Deploy with:
+#   gcloud run services replace cloudrun-service.yaml --region=us-central1
+#
+# Note: You must first build and push the image to Artifact Registry.
+
+apiVersion: serving.knative.dev/v1
+kind: Service
+metadata:
+  name: vegalens
+  labels:
+    cloud.googleapis.com/location: us-central1
+  annotations:
+    run.googleapis.com/description: "VegaLens - Elasticsearch Visualization Dashboard Builder"
+    run.googleapis.com/ingress: all
+    run.googleapis.com/launch-stage: GA
+spec:
+  template:
+    metadata:
+      annotations:
+        # Autoscaling configuration
+        autoscaling.knative.dev/minScale: "0"
+        autoscaling.knative.dev/maxScale: "10"
+        
+        # CPU allocation (CPU is only allocated during request processing)
+        run.googleapis.com/cpu-throttling: "true"
+        
+        # Startup CPU boost for faster cold starts
+        run.googleapis.com/startup-cpu-boost: "true"
+        
+        # Session affinity for better UX with Elasticsearch connections
+        run.googleapis.com/sessionAffinity: "true"
+    spec:
+      containerConcurrency: 80
+      timeoutSeconds: 300
+      serviceAccountName: vegalens-sa@PROJECT_ID.iam.gserviceaccount.com
+      containers:
+        - name: vegalens
+          # Replace with your actual image path after building
+          image: us-central1-docker.pkg.dev/PROJECT_ID/vegalens/vegalens:latest
+          ports:
+            - name: http1
+              containerPort: 3001
+          resources:
+            limits:
+              cpu: "1"
+              memory: 512Mi
+          env:
+            # Server configuration
+            - name: NODE_ENV
+              value: "production"
+            - name: PORT
+              value: "3001"
+            - name: LOG_LEVEL
+              value: "INFO"
+            
+            # CORS - set to your actual domain after deployment
+            - name: CORS_ORIGIN
+              value: "*"
+            
+            # ============================================
+            # Elasticsearch Configuration
+            # ============================================
+            # Choose ONE authentication method.
+            # Use Secret Manager for sensitive values in production:
+            #
+            # Option 1: Elasticsearch Serverless
+            # - name: ELASTIC_SERVERLESS_ENDPOINT
+            #   valueFrom:
+            #     secretKeyRef:
+            #       key: latest
+            #       name: elastic-serverless-endpoint
+            # - name: ELASTIC_API_KEY
+            #   valueFrom:
+            #     secretKeyRef:
+            #       key: latest
+            #       name: elastic-api-key
+            #
+            # Option 2: Elastic Cloud
+            # - name: ELASTIC_CLOUD_ID
+            #   valueFrom:
+            #     secretKeyRef:
+            #       key: latest
+            #       name: elastic-cloud-id
+            # - name: ELASTIC_API_KEY
+            #   valueFrom:
+            #     secretKeyRef:
+            #       key: latest
+            #       name: elastic-api-key
+            #
+            # Option 3: Self-hosted
+            # - name: ELASTIC_NODE
+            #   value: "https://your-elasticsearch:9200"
+            # - name: ELASTIC_API_KEY
+            #   valueFrom:
+            #     secretKeyRef:
+            #       key: latest
+            #       name: elastic-api-key
+          
+          # Startup probe for faster scaling
+          startupProbe:
+            httpGet:
+              path: /health
+              port: 3001
+            initialDelaySeconds: 0
+            periodSeconds: 2
+            timeoutSeconds: 2
+            failureThreshold: 30
+          
+          # Liveness probe
+          livenessProbe:
+            httpGet:
+              path: /health
+              port: 3001
+            initialDelaySeconds: 0
+            periodSeconds: 30
+            timeoutSeconds: 10
+            failureThreshold: 3
+  
+  traffic:
+    - percent: 100
+      latestRevision: true
+
+
